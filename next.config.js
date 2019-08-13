@@ -83,5 +83,6 @@ module.exports = withBundleAnalyzer(
         },
 
         /* Other NextJS config */
+        env: {},
     })
 );

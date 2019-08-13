@@ -1,5 +1,12 @@
 import React from "react";
+import { Row, Col } from "antd";
 
 export default () => {
-    return <div>Hello World!</div>;
+    return (
+        <Row>
+            <Col>
+                <div>Hello World!</div>
+            </Col>
+        </Row>
+    );
 };
