@@ -1,6 +1,9 @@
 const webpack = require("webpack");
 const withLess = require("@zeit/next-less");
-const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+    enabled: process.env.ANALYZE === "true",
+});
 
 const lessToJS = require("less-vars-to-js");
 const fs = require("fs");
@@ -64,22 +67,6 @@ module.exports = withBundleAnalyzer(
             });
 
             return config;
-        },
-
-        /* withBundleAnalyzer config */
-        analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
-        analyzeBrowser: ["browser", "both"].includes(
-            process.env.BUNDLE_ANALYZE
-        ),
-        bundleAnalyzerConfig: {
-            server: {
-                analyzerMode: "static",
-                reportFilename: "../bundles/server.html",
-            },
-            browser: {
-                analyzerMode: "static",
-                reportFilename: "../bundles/client.html",
-            },
         },
 
         /* Other NextJS config */
