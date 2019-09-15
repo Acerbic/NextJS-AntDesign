@@ -14,6 +14,16 @@ Known issue for ant.design is the huge Icons bundle size. I have no idea how to
 solve this short of waiting for v4.x release, in which they promised to fix
 this.
 
+## Usage
+
+To quickly start developing using this boilerplate, use the following commands:
+
+```bash
+mkdir my-project
+cd my-project
+npx degit Acerbic/NextJS-AntDesign
+```
+
 [nextjs]: https://nextjs.org/
 [zeitnow]: https://zeit.co/now
 [antd]: https://ant.design/
